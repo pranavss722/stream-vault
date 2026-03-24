@@ -1,0 +1,52 @@
+[project]
+name = "stream-vault"
+version = "0.1.0"
+description = "Production-grade streaming feature store with dual-write consistency between Delta Lake and Redis, GPT-4o drift detection, and 69 unit tests."
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "mlflow",
+    "scikit-learn",
+    "xgboost",
+    "evidently",
+    "prometheus-client",
+    "pandas",
+    "numpy",
+    "httpx",
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+    "openai",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "httpx",
+    "anyio",
+    "pytest-anyio",
+    "ruff",
+    "openai",
+    "deltalake",
+    "redis",
+    "pandas",
+    "fastapi",
+    "uvicorn",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-m 'not integration'"
+markers = [
+    "integration: marks tests requiring the live Docker stack (deselect with '-m not integration')",
+]
