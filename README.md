@@ -67,6 +67,14 @@ pip install -e ".[dev]"
 python scripts/generate_synthetic_data.py
 ```
 
+### Run the End-to-End Demo
+
+```bash
+docker-compose up -d
+uvicorn app.main:app --reload &
+python demo.py
+```
+
 ### Run Tests
 
 ```bash
