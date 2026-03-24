@@ -1,6 +1,6 @@
 # Stream Vault
 
-![Python](https://img.shields.io/badge/python-3.11-blue.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg)
+![CI](https://github.com/pranavss722/stream-vault/actions/workflows/ci.yml/badge.svg) ![Python](https://img.shields.io/badge/python-3.11-blue.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 A production-grade streaming feature store with dual-write consistency, TDD discipline, and a GPT-4o pre-commit drift guard.
 
